@@ -1,6 +1,6 @@
 public class PengunjungCafe15 {
     public static void daftarPengunjung(String... namaPengunjung) {
-        System.out.println("Daftar Nama Pengunjung: ");
+        System.out.println("Daftar nama pengunjung: ");
         for (String nama : namaPengunjung) {
             System.out.println("- " + nama);
         }
