@@ -31,6 +31,18 @@ public class Kafe15 {
         int hargaTotal = hargaItems[pilihanMenu - 1] * banyakItem;
         return hargaTotal;
     }
+
+    public static int hitungHargaSetelahDiskon(int totalHarga, String kodePromo) {
+        double diskon = 0;
+
+        if (kodePromo.equalsIgnoreCase("DISKON50")) {
+            diskon = 0.50;
+        } else if (kodePromo.equalsIgnoreCase("DISKON30")) {
+            diskon = 0.30;
+        }
+
+        return (int) (totalHarga * (1 - diskon));
+    }
        public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         Menu("Andi", true, "DISKON50");
@@ -40,7 +52,9 @@ public class Kafe15 {
         int banyakItem = sc.nextInt();
             
         int totalHarga = hitungTotalHarga15(pilihanMenu, banyakItem);
+        int hargaSetelahDiskon = hitungHargaSetelahDiskon(totalHarga, "DISKON50");
             
-        System.out.println("Total harga untuk pesanan Anda: Rp " + totalHarga);
+        System.out.println("\nTotal harga untuk pesanan Anda: Rp " + totalHarga);
+        System.out.println("Harga setelah diskon: Rp " + hargaSetelahDiskon);
     }
 }
